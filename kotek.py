@@ -1,0 +1,2 @@
+﻿print("ala ma kota")
+
