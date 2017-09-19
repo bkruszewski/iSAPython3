@@ -4,8 +4,10 @@ lista = ["jeden", "trzy"]
 
 print(lista)
 
+# różne typy danych w liście
 lista2 = [1, "dwa", "trzy", 5]
 
+# tak tworzymy z innych kolekcji
 lista3 = list(range(2,6))
 print(lista3)
 
