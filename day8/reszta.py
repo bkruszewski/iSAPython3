@@ -10,10 +10,11 @@ for indeks, moneta in enumerate(monety):
     if reszta >= moneta:
         ilosc = reszta // moneta
         wartosc = ilosc * moneta
-        reszta = reszta - wartosc
+        reszta = round(reszta - wartosc, 2)
 
         wydac[indeks] = ilosc
+    # print(f"reszta: {reszta}, {wydac}")
 
-print("Wydać:")
+# print("Wydać:")
 for moneta, ilosc in zip(monety, wydac):
     print(f"Moneta {moneta:>4} zł - {ilosc:>4} szt.")
