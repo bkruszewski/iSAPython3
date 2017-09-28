@@ -1,1 +1,8 @@
 .idea/*
+.idea/misc.xml
+
+day8/secrets.py
+
+day6/__pycache__/
+day8/__pycache__/
+
