@@ -1,5 +1,7 @@
 from day9.ksiazka import Ksiazka
 
+# tworzymy obiekty typu Ksiazka
+# inaczej - tworzymy instancje klasy Ksiazka
 ks1 = Ksiazka("Brzechwa", "Lokomotywa")
 ks2 = Ksiazka("Forsyth", "Akta Odessy")
 
