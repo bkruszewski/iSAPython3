@@ -3,6 +3,8 @@ from day11.poczta import Poczta
 
 poczta = Poczta(login, haslo)
 
-poczta.wyslij_wiadomosc(["lalpololo@gmail.com"], "test", "hello")
+pliki = [r"/home/trener/PycharmProjects/iSAPython3/kotek.py"]
+
+poczta.wyslij_wiadomosc(["lalpololo@gmail.com"], "test", "hello", pliki)
 
 
