@@ -20,6 +20,26 @@ class Pracownik(object):
         self.wynagrodzenie += self.wynagrodzenie * (procent/100)
 
 
+    @classmethod
+    def ustaw_roczna_podwyzka(cls, wartosc):
+        cls.roczna_podw = wartosc
+
+
+    @classmethod
+    def pracownik_z_pensja(cls, imie, stanowisko, pensja):
+
+        prac = Pracownik(imie, stanowisko)
+        prac.wynagrodzenie = pensja
+
+        return prac
+
+    @staticmethod
+    def sprawdz_pesel(pesel):
+
+        if len(str(pesel)) == 11:
+            return True
+        else:
+            return False
 
 
 
