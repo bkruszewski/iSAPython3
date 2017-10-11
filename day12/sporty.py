@@ -12,3 +12,9 @@ z1.wypisz_numer()
 z1.ustaw_zarobki("milion")
 
 z1.wypisz_zarobki()
+
+z1._Zawodnik__zarobki = 200
+print(z1._Zawodnik__zarobki)
+
+
+print(z1.__dict__)
