@@ -1,7 +1,7 @@
 class Zawodnik(object):
 
     def __init__(self, imie, dyscyplina):
-        self.imie = imie
+        self.imie = imie.capitalize()
         self.dyscyplina = dyscyplina
         self.__zarobki = 0
         self.__numer_koszulki = None
@@ -25,9 +25,9 @@ class Zawodnik(object):
     def wypisz_numer(self):
 
         if Zawodnik.__sprawdz_numer(self.__numer_koszulki):
-            print(self.__numer_koszulki)
+            return self.__numer_koszulki
         else:
-            print(f"Zawodnik {self.imie} nie ma numeru.")
+            return None
 
     def ustaw_zarobki(self, kwota):
 

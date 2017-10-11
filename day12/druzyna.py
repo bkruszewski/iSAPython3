@@ -14,6 +14,13 @@ class Druzyna(object):
         else:
             return self.__budzet
 
+    @budzet.setter
+    def budzet(self, wartosc):
+        try:
+            self.__budzet = int(wartosc)
+        except:
+            print("Podaj wartość liczbową")
+
 
     @property
     def transfery(self):
@@ -21,4 +28,11 @@ class Druzyna(object):
             return "brak transferów"
         else:
             return self.__transfery
+
+    @transfery.setter
+    def transfery(self, transfer):
+        if isinstance(transfer, list):
+            self.__transfery = transfer
+        else:
+            print("Podaj transfery jako listę!")
 
