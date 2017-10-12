@@ -14,6 +14,7 @@ class Druzyna(object):
         else:
             return self.__budzet
 
+    # setter - nazwa_property.setter
     @budzet.setter
     def budzet(self, wartosc):
         try:

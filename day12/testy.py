@@ -1,12 +1,20 @@
 from unittest import TestCase
 from day12.zawodnik import Zawodnik
 
+# testy piszemy w klasie testów - dziedziczymy z TestCase
 class TestZawodnik(TestCase):
 
     def setUp(self):
+        """Ta metoda jest wykonywana przed każdym testem.
+        W niej najlepiej inicjalizować rzeczy potrzebne,
+        które będą wykorzystane w wielu testach
+
+        Każdy z testów otrzyma 'świeżr' obiekty"""
         self.zawodnik = Zawodnik("jan", "piłka")
 
 
+    # to jest metoda testowa - jeden test
+    # nazwa zaczyna się od test_ następnie najlepiej podać nazwę testowanej metody
     def test_init(self):
 
         self.assertEquals("Jan", self.zawodnik.imie)

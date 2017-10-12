@@ -37,8 +37,6 @@ class Zawodnik(object):
             print("Zarobki muszą być podane cyfrowo!")
             self.__zarobki = 0
 
-
-
     def wypisz_zarobki(self):
         if self.__zarobki == 0:
             print("Brak informacji o zarobkach")
