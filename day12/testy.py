@@ -17,7 +17,7 @@ class TestZawodnik(TestCase):
     # nazwa zaczyna się od test_ następnie najlepiej podać nazwę testowanej metody
     def test_init(self):
 
-        self.assertEquals("Jan", self.zawodnik.imie)
+        self.assertEqual("Jan", self.zawodnik.imie)
 
     def test_ustaw_nr_koszulki(self):
 
@@ -25,7 +25,7 @@ class TestZawodnik(TestCase):
 
         faktyczny_numer = self.zawodnik.wypisz_numer()
 
-        self.assertEquals(23, faktyczny_numer)
+        self.assertEqual(23, faktyczny_numer)
 
     def test_ustaw_nieprawidlowy_nr_koszulki(self):
 
