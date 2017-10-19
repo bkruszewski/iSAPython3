@@ -1,27 +1,54 @@
 import os
+
+import sys
 from PIL import Image
 
 
-folder = r"c:\fotki"
-root = "obrazek"
-nowa_szer = 800
+# folder = r"c:\fotki"
+# root = "obrazek"
+# nowa_szer = 800
 
-for nr, foto in enumerate(os.listdir(folder)):
+def resize(root, nowa_szer):
 
-    ext = os.path.splitext(foto)[1]
+    folder = os.getcwd()
 
-    zdjecie = Image.open(os.path.join(folder, foto))
+    for nr, foto in enumerate(os.listdir(folder)):
 
-    ratio = zdjecie.width / zdjecie.height
+        # oddzielamy rozszerzenie
+        ext = os.path.splitext(foto)[1]
 
-    nowa_wys = round(nowa_szer / ratio)
+        # jesli rozszerzenie nie jest zdjeciem to kolejny plik
+        if ext.lower() not in ["png", "jpg", "jpeg", "bmp"]:
+            continue
 
-    male_foto = zdjecie.resize((nowa_szer, nowa_wys))
+        zdjecie = Image.open(os.path.join(folder, foto))
 
-    nowy_plik = f"{root}{nr + 1}.{ext}"
+        # obliczamy proporcje i obliczamy nową wysokość
+        ratio = zdjecie.width / zdjecie.height
+        nowa_wys = round(nowa_szer / ratio)
 
-    male_foto.save(os.path.join(folder, nowy_plik))
+        # tworzymy zdjęcie ze zmienionym rozmiarem
+        male_foto = zdjecie.resize((nowa_szer, nowa_wys))
 
-    zdjecie.close()
+        # tworzymy nową nazwę zdjęcia
+        nowy_plik = f"{root}{nr + 1}.{ext}"
 
+        # zapisujemy zmienione zdjęcie
+        male_foto.save(os.path.join(folder, nowy_plik))
 
+        zdjecie.close()
+
+def main():
+
+    if len(sys.argv) != 3:
+        print("Użycie:\npython resize_photo.py nazwa szerokosc")
+        print("nazwa - wspólny człon dla plików, szerokość - nowa szerokość")
+        print("Zdjęcie zostanie przeskalowane odpowiednio")
+
+    root = sys.argv[1].strip()
+    nowa_szer = sys.argv[2].strip()
+
+    resize(root, nowa_szer)
+
+if __name__ == '__main__':
+    main()
