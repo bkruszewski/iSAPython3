@@ -8,6 +8,7 @@ import json
 import os
 import requests
 
+
 api_key = "c9b3f06d8fee45fe9e0419673d1a2cdd"
 api_url = "https://westeurope.api.cognitive.microsoft.com/vision/v1.0/analyze"
 
