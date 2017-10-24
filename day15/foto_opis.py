@@ -3,7 +3,7 @@
 import json
 import os
 from PIL import Image, ImageDraw, ImageFont
-from day15.ms_cv import get_face_rect, get_caption, get_pic_info
+from day15.ms_cv import get_face_rect, get_caption, has_faces
 
 
 def describe_picture(image, img_data):
@@ -27,17 +27,17 @@ def describe_picture(image, img_data):
 
             # prepare font for face info
             f_size = round((face_rect[3] - face_rect[1]) / 8)
-            # text_font = ImageFont.truetype("arial.ttf", f_size)
-            text_font = ImageFont.load_default()
+            text_font = ImageFont.truetype("arial.ttf", f_size)
+            # text_font = ImageFont.load_default()
             # print face info
             face_description = f"Płeć: {face['gender']},\nwiek: {face['age']}"
             drawer.text((face_rect[0], face_rect[1] - f_size * 2),
-                        face_description, font=text_font, fill=(123,104,238))
+                        face_description, font=text_font, fill=(123, 104, 238))
 
         # caption - font 1/25 of img height
         t_size = round(img_data['metadata']['height'] / 25)
-        # cap_font = ImageFont.truetype("arial.ttf", t_size)
-        cap_font = ImageFont.load_default()
+        cap_font = ImageFont.truetype("arial.ttf", t_size)
+        # cap_font = ImageFont.load_default()
         drawer.text((20, 20), f"{get_caption(img_data)}", font=cap_font, fill=(41, 178, 39))
 
         file_ext = os.path.splitext(image)
@@ -48,10 +48,17 @@ def describe_picture(image, img_data):
 
 def main():
     # test
-    url = 'http://s.eatthis-cdn.com/media/images/ext/543627202/happy-people-friends.jpg'
-    x = get_pic_info(url, "pic1.jpg")
+    print("Test działania opisywania zdjęć.")
 
-    describe_picture("pic1.jpg", x)
+    with open("friends.json") as file:
+        pic_data = json.load(file)
+
+    if has_faces(pic_data):
+        print('Zaznaczam twarze na zdjęciu...')
+        describe_picture("friends.jpg", pic_data)
+        print('Done.')
+    else:
+        print('No faces!')
 
 
 if __name__ == '__main__':

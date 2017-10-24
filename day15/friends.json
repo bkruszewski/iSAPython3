@@ -1,0 +1,96 @@
+{
+    "categories": [
+        {
+            "name": "people_group",
+            "score": 0.9140625,
+            "detail": {
+                "celebrities": []
+            }
+        }
+    ],
+    "adult": {
+        "isAdultContent": false,
+        "isRacyContent": false,
+        "adultScore": 0.013359639793634415,
+        "racyScore": 0.040991660207509995
+    },
+    "description": {
+        "tags": [
+            "person",
+            "posing",
+            "outdoor",
+            "photo",
+            "standing",
+            "woman",
+            "group",
+            "people",
+            "young",
+            "smiling",
+            "holding",
+            "man",
+            "friends",
+            "girl",
+            "couple",
+            "table",
+            "dress",
+            "cake",
+            "shirt",
+            "white",
+            "court"
+        ],
+        "captions": [
+            {
+                "text": "a group of people posing for a photo",
+                "confidence": 0.9877387460256892
+            }
+        ]
+    },
+    "requestId": "c32805f7-0504-45d0-ab67-28dd131f42f4",
+    "metadata": {
+        "width": 1024,
+        "height": 750,
+        "format": "Jpeg"
+    },
+    "faces": [
+        {
+            "age": 36,
+            "gender": "Male",
+            "faceRectangle": {
+                "left": 251,
+                "top": 183,
+                "width": 168,
+                "height": 168
+            }
+        },
+        {
+            "age": 25,
+            "gender": "Female",
+            "faceRectangle": {
+                "left": 67,
+                "top": 148,
+                "width": 149,
+                "height": 149
+            }
+        },
+        {
+            "age": 32,
+            "gender": "Male",
+            "faceRectangle": {
+                "left": 676,
+                "top": 257,
+                "width": 148,
+                "height": 148
+            }
+        },
+        {
+            "age": 27,
+            "gender": "Female",
+            "faceRectangle": {
+                "left": 452,
+                "top": 195,
+                "width": 145,
+                "height": 145
+            }
+        }
+    ]
+}
