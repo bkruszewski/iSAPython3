@@ -7,6 +7,8 @@
 import json
 import os
 import requests
+from day15.foto_opis import *
+from day14.downloads import pobierz_foto
 
 
 api_key = "3e144c5294d645269b5982201687b3bd"
@@ -62,3 +64,14 @@ def get_caption(data):
         return captions[0]['text']
     else:
         return "No caption"
+
+def main():
+    url = 'http://s.eatthis-cdn.com/media/images/ext/543627202/happy-people-friends.jpg'
+    x = get_pic_info(url, "pic1.jpg")
+
+    pobierz_foto(url, './pic1.jpg')
+
+    describe_picture("pic1.jpg", x)
+
+if __name__ == '__main__':
+    main()
