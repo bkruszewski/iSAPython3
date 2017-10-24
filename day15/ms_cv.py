@@ -69,7 +69,7 @@ def main():
     url = 'http://s.eatthis-cdn.com/media/images/ext/543627202/happy-people-friends.jpg'
     x = get_pic_info(url, "pic1.jpg")
 
-    pobierz_foto(url, './pic1.jpg')
+    pobierz_foto(url, 'pic1.jpg')
 
     describe_picture("pic1.jpg", x)
 
