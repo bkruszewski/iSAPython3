@@ -9,8 +9,18 @@ import os
 import requests
 
 
-api_key = "c9b3f06d8fee45fe9e0419673d1a2cdd"
+api_key = "3e144c5294d645269b5982201687b3bd"
 api_url = "https://westeurope.api.cognitive.microsoft.com/vision/v1.0/analyze"
+
+headers = {
+    'Content-Type': 'application/json',
+    'Ocp-Apim-Subscription-Key': api_key
+}
+
+param = {
+    'visualFeatures': 'Categories,Description,Faces,Adult',
+    'details': 'Celebrities'
+}
 
 
 def get_pic_info(pic_url, pic_name):
