@@ -701,14 +701,14 @@ def update_time():
     last_time = t
 
 
-# def render(canvas):
-#     update_time()
-#     if game_mode == MODE_GAME:
-#         render_game(canvas)
-#     elif game_mode == MODE_VICTORY:
-#         render_victory(canvas)
-#     elif game_mode == MODE_INTRO:
-#         render_intro(canvas)
+def render(canvas):
+    update_time()
+    if game_mode == MODE_GAME:
+        render_game(canvas)
+    elif game_mode == MODE_VICTORY:
+        render_victory(canvas)
+    elif game_mode == MODE_INTRO:
+        render_intro(canvas)
 
 
 def key_event(key, down):

@@ -1,5 +1,5 @@
 import random
-from Week8.kod.PongAG.pads import PAD_WIDTH, HALF_PAD_WIDTH, HALF_PAD_HEIGHT, update_pads_pos, draw_pads
+from day15.PongAG.pads import PAD_WIDTH, HALF_PAD_WIDTH, HALF_PAD_HEIGHT, update_pads_pos, draw_pads
 
 
 CANVA_WIDTH = 600
